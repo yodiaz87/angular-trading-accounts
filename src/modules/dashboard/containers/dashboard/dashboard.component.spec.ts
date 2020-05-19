@@ -25,10 +25,4 @@ describe('DashboardComponent', () => {
     const app = fixture.componentInstance;
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(DashboardComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('trading-dashboard app is running!');
-  });
 });

@@ -1,5 +1,5 @@
-import { WatchListComponent } from './watch-list/watch-list.component';
+import { AccountChangeComponent } from './account-change/account-change.component';
 
-export const components = [ WatchListComponent ];
+export const components = [ AccountChangeComponent ];
 
-export * from './watch-list/watch-list.component';
+export * from './account-change/account-change.component';
