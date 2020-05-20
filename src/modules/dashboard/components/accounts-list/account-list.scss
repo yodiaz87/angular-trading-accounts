@@ -1,3 +1,4 @@
+
 .card {
   display: flex;
   flex-direction: column;
@@ -124,7 +125,7 @@
 }
 .--order--element--left:before {
   left: 5px;
-  top: 2px;
+  bottom: 0;
 }
 .--order--up .--order--element--right,
 .--order--down .--order--element--right {
@@ -132,7 +133,7 @@
 }
 .--order--element--right:after {
   right: 5px;
-  top: 2px;
+  bottom: 0;
 }
 .--order--up .--order--element--left:before,
 .--order--down .--order--element--left:before {
@@ -148,7 +149,8 @@
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
-  top: 4px;
+  bottom: auto;
+  top: 0px;
 }
 .hide {
   display: none;
