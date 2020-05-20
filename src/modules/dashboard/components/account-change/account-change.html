@@ -1,2 +1,15 @@
-<p> {{ (cashTotal | currency ) }} </p>
-<p> {{ percent | percent }}  / {{ (change | currency :'USD':'symbol':'4.2-2') }}</p>
+<div class="card__data">
+  <div class="card__data__column --left">
+    <div class="card__data__column__item">
+      <span class="card__data_text --variant-1">{{ account.prefix }} - {{ account.code }}</span>
+    </div>
+  </div>
+  <div class="card__data__column --right">
+    <div class="card__data__column__item">
+      <span class="card__data_text --variant-2">${{ account.totalCash }}</span>
+    </div>
+    <div class="card__data__column__item">
+      <span class="card__data_text --variant-3">{{ account.todayPercent }}% / ${{ account.todayCashChange }}</span>
+    </div>
+  </div>
+</div>

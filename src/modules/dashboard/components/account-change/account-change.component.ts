@@ -1,15 +1,15 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Account } from '../../models/account.model';
 
 @Component({
   selector: 'app-account-change',
   templateUrl: './account-change.html',
-  styleUrls: ['./account-change.scss']
+  styleUrls: ['./account-change.scss'],
 })
 export class AccountChangeComponent {
 
-  @Input() cashTotal = 0;
-  @Input() percent = 0;
-  @Input() change = 0;
+  @Input() account: Account;
+
 }
 
 
