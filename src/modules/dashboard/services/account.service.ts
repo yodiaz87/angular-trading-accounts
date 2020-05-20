@@ -1,16 +1,15 @@
-import {Injectable} from '@angular/core';
-import {DATA} from '../mock-data/data.mock';
-import {Observable, of} from 'rxjs';
-import {AccountResponse} from '../models/account.model';
-import {Account} from '../models/account.model';
+import { Injectable } from '@angular/core';
+import { DATA } from '../mock-data/data.mock';
+import { Observable, of } from 'rxjs';
+import { AccountResponse } from '../models/account.model';
+import { Account } from '../models/account.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
-  constructor() {
-  }
+  constructor() {}
 
   getAccounts(count: number, orderedByCash = 1, orderedByAccount = 0): Observable<AccountResponse> {
     const data = {...DATA};
@@ -32,7 +31,6 @@ export class AccountService {
 
     }
 
-
     data.accounts = accounts.slice(0, count);
     return of(data);
   }
@@ -47,7 +45,6 @@ export class AccountService {
       return 1;
     }
 
-    // names must be equal
     return 0;
   }
 
@@ -59,7 +56,6 @@ export class AccountService {
       return 1;
     }
 
-    // names must be equal
     return 0;
   }
 

@@ -1,8 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {AccountService} from '../../services/account.service';
-import {Observable, of} from 'rxjs';
-import {map, tap} from 'rxjs/operators';
-import {Account} from '../../models/account.model';
+import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../../services/account.service';
+import { Observable, of } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+import { Account } from '../../models/account.model';
 
 @Component({
   selector: 'app-account-list',
@@ -17,10 +17,9 @@ export class AccountListComponent implements OnInit {
   orderAscendByAccount = 0;
 
   count = 3;
-  total = 4;
+  total = 0;
 
-  constructor(private accountService: AccountService) {
-  }
+  constructor(private accountService: AccountService) {}
 
   ngOnInit() {
     this.accounts$ = this.accountService.getAccounts(this.count).pipe(

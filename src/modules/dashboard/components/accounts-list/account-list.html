@@ -2,10 +2,10 @@
 <article class="card">
   <header class="card__header">
     <div class="card__header__column --left" [ngClass]="{'--order--down': orderAscendByAccount === 2, '--order--up': orderAscendByAccount === 1 }" (click)="orderAscendByAccountHandler()">
-      <div class="card__header__column__item"><span class="card__header__text  --variant-1">Account</span></div>
+      <div class="card__header__column__item"><span class="card__header__text --order--element--right ">Account</span></div>
     </div>
     <div class="card__header__column --right " [ngClass]="{'--order--down': orderAscendByCash === 2, '--order--up': orderAscendByCash === 1 }"(click)="orderAscendByCashHandler()">
-      <div class="card__header__column__item"><span class="card__header__text --variant-1">Available Cash</span></div>
+      <div class="card__header__column__item"><span class="card__header__text --order--element--left ">Available Cash</span></div>
       <div class="card__header__column__item"><span class="card__header__text --variant-2">Today's Change</span></div>
     </div>
   </header>
@@ -36,7 +36,7 @@
 
     </ul>
   </div>
-  <footer class="card__footer" [class.hide]="count >= total">
+  <footer class="card__footer" [class.hide]="total && count >= total">
     <a href="#" class="card__footer_link" title="Load more" (click)="loadMore($event)">Load more</a>
   </footer>
 </article>
