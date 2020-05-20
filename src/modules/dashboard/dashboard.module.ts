@@ -7,7 +7,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
 
-
 // components
 import * as fromComponents from './components';
 

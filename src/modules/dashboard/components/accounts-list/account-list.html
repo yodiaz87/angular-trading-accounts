@@ -16,7 +16,7 @@
            '--positive': account.isGain === 1,
             '--grey': account.isGain === 0
             }"
-          *ngFor="let account of (accounts$ | async)">
+          *ngFor="let account of  accounts">
           <app-account-change
           [account]="account">
           </app-account-change>

@@ -1,41 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import { AccountService } from '../../services/account.service';
-import { Observable, of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
-import { Account } from '../../models/account.model';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {Account} from '../../models/account.model';
+import {LoadAccountsEvent} from '../../models/events.model';
 
 @Component({
   selector: 'app-account-list',
   templateUrl: './account-list.html',
-  styleUrls: ['./account-list.scss']
+  styleUrls: ['./account-list.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AccountListComponent implements OnInit {
+export class AccountListComponent {
 
-  accounts$: Observable<Account[]> = of([]);
+  @Input() accounts: Account[];
+  @Input() total = 0;
+  @Input() count = 3;
+
+  @Output() loadAccountsEmitter: EventEmitter<LoadAccountsEvent> = new EventEmitter<LoadAccountsEvent>();
 
   orderAscendByCash = 1;
   orderAscendByAccount = 0;
 
-  count = 3;
-  total = 0;
-
-  constructor(private accountService: AccountService) {}
-
-  ngOnInit() {
-    this.accounts$ = this.accountService.getAccounts(this.count).pipe(
-      map(resp => resp.accounts)
-    );
-  }
+  constructor() {}
 
   orderAscendByCashHandler() {
     this.orderAscendByAccount = 0;
     const newVal = this.orderAscendByCash + 1;
     this.orderAscendByCash = (newVal > 2) ? 1 : newVal;
 
-    this.accounts$ = this.accountService.getAccounts(this.count, this.orderAscendByCash, this.orderAscendByAccount).pipe(
-      tap(r => this.total = r.total),
-      map(resp => resp.accounts)
-    );
+    this.loadAccountsEmitter.emit({
+      count: this.count,
+      orderAscendByCash: this.orderAscendByCash,
+      orderAscendByAccount: this.orderAscendByAccount
+    });
   }
 
   orderAscendByAccountHandler() {
@@ -43,19 +38,22 @@ export class AccountListComponent implements OnInit {
     const newVal = this.orderAscendByAccount + 1;
     this.orderAscendByAccount = (newVal > 2) ? 1 : newVal;
 
-    this.accounts$ = this.accountService.getAccounts(this.count, this.orderAscendByCash, this.orderAscendByAccount).pipe(
-      map(resp => resp.accounts)
-    );
+    this.loadAccountsEmitter.emit({
+      count: this.count,
+      orderAscendByCash: this.orderAscendByCash,
+      orderAscendByAccount: this.orderAscendByAccount
+    });
 
   }
 
   loadMore(event) {
     event.preventDefault();
     this.count += this.count;
-    this.accounts$ = this.accountService.getAccounts( this.count, this.orderAscendByCash, this.orderAscendByAccount).pipe(
-      tap(r => this.total = r.total),
-      map(resp => resp.accounts)
-    );
+    this.loadAccountsEmitter.emit({
+      count: this.count,
+      orderAscendByCash: this.orderAscendByCash,
+      orderAscendByAccount: this.orderAscendByAccount
+    });
   }
 
 }
