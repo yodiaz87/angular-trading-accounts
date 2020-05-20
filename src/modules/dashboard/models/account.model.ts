@@ -4,8 +4,10 @@ export interface AccountResponse {
 }
 
 export interface Account {
-  name: string;
-  totalCash: number;
-  todayPercent: number;
-  todayCashChange: number;
+  prefix: string;
+  code: string;
+  totalCash: string;
+  todayPercent: string;
+  todayCashChange: string;
+  isGain: number;
 }

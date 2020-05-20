@@ -1,23 +1,24 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AccountChangeComponent } from './account-change.component';
+import { AccountListComponent } from './account-list.component';
 
-describe('AccountChangeComponent', () => {
+describe('AccountListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule
       ],
       declarations: [
-        AccountChangeComponent
+        AccountListComponent
       ],
     }).compileComponents();
   }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AccountChangeComponent);
+    const fixture = TestBed.createComponent(AccountListComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
+
 
 });

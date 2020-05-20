@@ -1,2 +1,2 @@
-<p> {{ (cashTotal | currency) }} </p>
-<p> {{ percent }}%  / {{ (change | currency) }}</p>
+<p> {{ (cashTotal | currency ) }} </p>
+<p> {{ percent | percent }}  / {{ (change | currency :'USD':'symbol':'4.2-2') }}</p>

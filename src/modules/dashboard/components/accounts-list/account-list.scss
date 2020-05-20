@@ -1,0 +1,147 @@
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.card__header {
+  display: flex;
+  background: #f7f7f7;
+  border-bottom: 1px solid #bbbbbb;
+}
+.card__header__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  width: 50%;
+  cursor: pointer;
+
+}
+.card__header__column:not(:first-child) {
+  border-left: 1px solid #ffffff;
+}
+.card__header__column.--left .card__header__column__item {
+  text-align: left;
+}
+
+.card__header__column.--right .card__header__column__item {
+  text-align: right;
+}
+.card__header__column__item {
+  padding: 3px 0;
+}
+.card__header__text.--variant-2 {
+  color: #787878;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.card__list__item {
+  padding: 20px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.card__data {
+  display: flex;
+}
+.card__data__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+.card__data__column__item {
+  padding: 3px 0;
+}
+.card__data_text.--variant-1,
+.card__data_text.--variant-2 {
+  font-size: 1.5rem;
+}
+.card__data_text.--variant-1 {
+  font-weight: 700;
+  color: #0f72b0;;
+}
+.card__data_text.--variant-3 {
+  font-size: 1.125rem;
+}
+
+.card__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px 0;
+}
+.card__footer_link {
+  text-decoration: none;
+  color: #0f72b0;;
+  font-size: 1.5rem;
+}
+
+.--left .card__header__column__item,
+.--left .card__data__column__item {
+  text-align: left;
+}
+.--right .card__header__column__item,
+.--right .card__data__column__item {
+  text-align: right;
+}
+
+.--negative .card__data_text.--variant-3 {
+  color: #e92d3b;
+}
+.--positive .card__data_text.--variant-3 {
+  color: #5dB878;
+}
+.--grey .card__data_text.--variant-3 {
+  color: #9C9C9C;
+}
+.--order--up,
+.--order--down {
+  background: #efefef;
+}
+.--order--up .card__header__text.--variant-1,
+.--order--down .card__header__text.--variant-1 {
+  position: relative;
+  padding-left: 20px;
+}
+.--order--up .card__header__text.--variant-1:before,
+.--order--down .card__header__text.--variant-1:before {
+  content: "\276F";
+  position: absolute;
+  color: #0f72b0;
+}
+.--order--up .card__header__text.--variant-1:before {
+  left: 0px;
+  top: 13px;
+  transform-origin: 0 0;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+}
+.--order--down .card__header__text.--variant-1:before {
+  left: 16px;
+  top: 5px;
+  transform-origin: 0 0;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+}
+
+.hide {
+  display: none;
+}

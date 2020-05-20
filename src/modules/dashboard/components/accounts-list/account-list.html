@@ -1,0 +1,43 @@
+
+<article class="card">
+  <header class="card__header">
+    <div class="card__header__column --left" [ngClass]="{'--order--down': orderAscendByAccount === 2, '--order--up': orderAscendByAccount === 1 }" (click)="orderAscendByAccountHandler()">
+      <div class="card__header__column__item"><span class="card__header__text  --variant-1">Account</span></div>
+    </div>
+    <div class="card__header__column --right " [ngClass]="{'--order--down': orderAscendByCash === 2, '--order--up': orderAscendByCash === 1 }"(click)="orderAscendByCashHandler()">
+      <div class="card__header__column__item"><span class="card__header__text --variant-1">Available Cash</span></div>
+      <div class="card__header__column__item"><span class="card__header__text --variant-2">Today's Change</span></div>
+    </div>
+  </header>
+  <div class="card__body">
+    <ul class="card__list">
+      <li class="card__list__item "
+          [ngClass]="{'--negative': account.isGain === -1,
+           '--positive': account.isGain === 1,
+            '--grey': account.isGain === 0
+            }"
+          *ngFor="let account of (accounts$ | async)">
+        <div class="card__data">
+          <div class="card__data__column --left">
+            <div class="card__data__column__item">
+              <span class="card__data_text --variant-1">{{ account.prefix }} - {{ account.code }}</span>
+            </div>
+          </div>
+          <div class="card__data__column --right">
+            <div class="card__data__column__item">
+              <span class="card__data_text --variant-2">${{ account.totalCash }}</span>
+            </div>
+            <div class="card__data__column__item">
+              <span class="card__data_text --variant-3">{{ account.todayPercent }}% / ${{ account.todayCashChange }}</span>
+            </div>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+  <footer class="card__footer" [class.hide]="count >= total">
+    <a href="#" class="card__footer_link" title="Load more" (click)="loadMore($event)">Load more</a>
+  </footer>
+</article>
+

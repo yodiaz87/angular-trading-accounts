@@ -1,43 +1,55 @@
-import { AccountResponse } from '../models/account.model';
+import {AccountResponse} from '../models/account.model';
 
 export const DATA: AccountResponse = {
 
   accounts: [
     {
-      name: 'IRA - 5200',
-      totalCash: 576336,
-      todayPercent: -0.08,
-      todayCashChange: 891669
+      prefix: 'IRA',
+      code: '5200',
+      totalCash: '5,763.36',
+      todayPercent: '-0.08',
+      todayCashChange: '8,916.69',
+      isGain: -1 // loosing
     },
     {
-      name: 'AAA - 3810',
-      totalCash: 1005005407,
-      todayPercent: 0.07,
-      todayCashChange: 891669
+      prefix: 'AAA',
+      code: '3810',
+      totalCash: '10,05005407',
+      todayPercent: '+0.07',
+      todayCashChange: '8,916.69',
+      isGain: 1
     },
     {
-      name: 'REG - 2019',
-      totalCash: 1346567934,
-      todayPercent: 0,
-      todayCashChange: 0
+      prefix: 'REG',
+      code: '2019',
+      totalCash: '13,465,679.34',
+      todayPercent: '0.00',
+      todayCashChange: '0.00',
+      isGain: 0
     },
     {
-      name: 'AAA - 1812',
-      totalCash: 201092610,
-      todayPercent: 0.21,
-      todayCashChange: 3888163
+      prefix: 'AAA',
+      code: '1812',
+      totalCash: '2,010,926.10',
+      todayPercent: '+0.21',
+      todayCashChange: '38,881.63',
+      isGain: 1
     },
     {
-      name: 'IRA - 0146',
-      totalCash: 1588430239,
-      todayPercent: -0.03,
-      todayCashChange: 743083
+      prefix: 'IRA',
+      code: '0146',
+      totalCash: '15,884,302.39',
+      todayPercent: '-0.03',
+      todayCashChange: '7,430.83',
+      isGain: -1
     },
     {
-      name: 'AAA - 0029',
-      totalCash: 3916033442,
-      todayPercent: -0.07,
-      todayCashChange: 3143587
+      prefix: 'AAA',
+      code: '0029',
+      totalCash: '39,160,334.42',
+      todayPercent: '-0.07',
+      todayCashChange: '31,435.87',
+      isGain: -1
     }
   ],
   total: 6
