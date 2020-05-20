@@ -14,7 +14,7 @@ export const DATA: AccountResponse = {
     {
       prefix: 'AAA',
       code: '3810',
-      totalCash: '10,05005407',
+      totalCash: '10,050,054.07',
       todayPercent: '+0.07',
       todayCashChange: '8,916.69',
       isGain: 1
